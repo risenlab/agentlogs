@@ -1,0 +1,31 @@
+[project]
+name = "risenlab-agentlogs"
+dynamic = ["version"]
+description = "Schema definitions and utilities for the AgentLogs dataset"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+authors = [{ name = "RISEN Lab" }]
+keywords = ["agentlogs", "github", "copilot", "dataset", "schema"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/risenlab/agentlogs"
+Documentation = "https://github.com/risenlab/agentlogs/tree/main/docs/schema"
+Dataset = "https://huggingface.co/datasets/risenlab/agentlogs"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/agentlogs/schema/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentlogs"]

@@ -1,0 +1,78 @@
+AgentLogs Dataset License
+
+Copyright (c) 2026 RISEN Lab
+
+The AgentLogs dataset, including the sample under data/dataset-sample/ and the
+full release on Hugging Face, is licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt this material for any purpose, even
+commercially, provided that you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Suggested attribution:
+
+  AgentLogs dataset by RISEN Lab, licensed under CC BY 4.0.
+  https://creativecommons.org/licenses/by/4.0/
+
+When redistributing this dataset or a derivative, include this file (or equivalent
+notice) and retain the third-party notices below.
+
+
+Use restrictions
+
+Much of this dataset was collected from GitHub services (GitHub REST API
+and the Copilot API). This license does not grant any rights beyond those
+you already have from GitHub or other third parties.
+
+You must comply with the then-current GitHub Terms of Service, Acceptable Use
+Policies, and any applicable API, Copilot, or product terms when accessing,
+using, or redistributing this dataset:
+https://docs.github.com/en/site-policy/github-terms/github-terms-of-service
+https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies
+
+You are responsible for ensuring your use complies with applicable law and with
+the rights of people whose data appear in the dataset (e.g. GitHub usernames,
+message content, and code excerpts in session logs).
+
+
+Third-party notices
+
+GitHub Search (GHS)
+
+Repository sampling for AgentLogs uses a seed list from GitHub Search (GHS):
+https://seart-ghs.si.usi.ch/
+https://github.com/seart-group/ghs
+https://doi.org/10.5281/zenodo.4588464
+
+The seed CSV is not distributed with AgentLogs. Repository records in this dataset
+were selected using that seed and collected from the GitHub and Copilot APIs.
+
+GitHub Search is used under the MIT License below. Redistributors must include
+this copyright and permission notice for that component.
+
+---
+
+MIT License
+
+Copyright (c) 2020-present SEART Research Group and Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

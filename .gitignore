@@ -1,0 +1,16 @@
+.DS_Store
+
+.venv
+.vscode
+*.code-workspace
+
+__pycache__
+
+*.env
+
+data/*
+!data/dataset-sample
+dist/
+*.egg-info/
+*.tmp
+.tmp
