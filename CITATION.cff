@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: If you use AgentLogs in an academic publication, please cite the preprint below.
+title: "AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent"
+type: dataset
+authors:
+  - family-names: Richards
+    given-names: Jonan
+  - family-names: Horikawa
+    given-names: Kosei
+  - family-names: Fan
+    given-names: Youmei
+  - family-names: Kashiwa
+    given-names: Yutaro
+  - family-names: Wessel
+    given-names: Mairieli
+identifiers:
+  - type: doi
+    value: 10.48550/arXiv.2608.29204
+url: https://arxiv.org/abs/2608.29204
+year: 2026
+month: 8
+preferred-citation:
+  type: generic
+  authors:
+    - family-names: Richards
+      given-names: Jonan
+    - family-names: Horikawa
+      given-names: Kosei
+    - family-names: Fan
+      given-names: Youmei
+    - family-names: Kashiwa
+      given-names: Yutaro
+    - family-names: Wessel
+      given-names: Mairieli
+  title: "AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent"
+  year: 2026
+  month: 8
+  doi: 10.48550/arXiv.2608.29204
+  url: https://arxiv.org/abs/2608.29204
+  identifiers:
+    - type: other
+      value: arXiv:2608.29204
+      description: arXiv preprint

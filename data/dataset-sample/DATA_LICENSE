@@ -47,8 +47,8 @@ https://seart-ghs.si.usi.ch/
 https://github.com/seart-group/ghs
 https://doi.org/10.5281/zenodo.4588464
 
-The seed CSV is not distributed with AgentLogs. Repository records in this dataset
-were selected using that seed and collected from the GitHub and Copilot APIs.
+The seed CSV is not distributed with AgentLogs. The repositories table is built
+from that CSV.
 
 GitHub Search is used under the MIT License below. Redistributors must include
 this copyright and permission notice for that component.

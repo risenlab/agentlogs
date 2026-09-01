@@ -1,12 +1,15 @@
 # AgentLogs
 
-[![version 0.2](https://img.shields.io/badge/version-0.2-blue)](https://huggingface.co/datasets/risenlab/agentlogs/tree/v0.2)
-[![PyPI](https://img.shields.io/pypi/v/risenlab-agentlogs)](https://pypi.org/project/risenlab-agentlogs/)
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-dataset-ffd21e?logo=huggingface&logoColor=ffd21e)](https://huggingface.co/datasets/risenlab/agentlogs)
+<a href="https://github.com/risenlab/agentlogs/tree/main" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Version-v0.2-blue?logo=github&amp;logoColor=whitesmoke" alt="Version"></a>
+<a href="https://pypi.org/project/risenlab-agentlogs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/v/risenlab-agentlogs?label=Package&amp;logo=pypi&amp;logoColor=whitesmoke" alt="Package"></a>
+<a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Database-v0.2-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Database"></a>
+<a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Preprint-2608.29204-b31b1b.svg?logo=arxiv&amp;logoColor=whitesmoke" alt="Preprint"></a>
 
 AgentLogs is a dataset of activity related to the [GitHub agents functionality](https://github.com/features/copilot/agents): repository metadata, agent tasks, sessions, session logs (messages, tool calls, usage details, etc.), and user records. This repository contains schema definitions, example analysis notebooks, and a sample of the dataset.
 
-Stay tuned for the preprint!
+This dataset is described in:
+
+> Jonan Richards, Kosei Horikawa, Youmei Fan, Yutaro Kashiwa, and Mairieli Wessel (2026), *AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent*. arXiv: [2608.29204](https://arxiv.org/abs/2608.29204) (preprint).
 
 ## Dataset
 
@@ -29,7 +32,7 @@ See the [schema reference](docs/schema/README.md) for field-level documentation 
   <em>Entity relationship diagram for the AgentLogs dataset. Non-foreign key fields are omitted.</em>
 </p>
 
-The full dataset is published on [Hugging Face](https://huggingface.co/datasets/risenlab/agentlogs). This repository includes a **sample** of this data under `data/dataset-sample/` (see [`DATA_LICENSE`](DATA_LICENSE)). Repository records in the sample (and in the full dataset) contain data from the [GitHub Search](https://seart-ghs.si.usi.ch/) list (see [Acknowledgements](#acknowledgements)).
+The full dataset is published on [Hugging Face](https://huggingface.co/datasets/risenlab/agentlogs). This repository includes a **sample** of this data under `data/dataset-sample/` (see [`DATA_LICENSE`](DATA_LICENSE)). Repository records in the sample (and in the full dataset) contain data from the [GitHub Search](https://seart-ghs.si.usi.ch/) list (see [License](#license)).
 
 ## This repository
 
@@ -119,6 +122,24 @@ Same row-by-row pattern as the local streaming notebook for the smaller tables, 
 - Repeated scans (bytes are fetched again each run; download parquet and use DuckDB, Polars, or local streaming).
 - Aggregates over a full table (see DuckDB and Polars).
 
+## Citation
+
+If you use AgentLogs in an academic publication, please cite this preprint:
+
+```bibtex
+@misc{richards2026AgentLogsDatasetOpening,
+  title = {{AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent}},
+  author = {Richards, Jonan and Horikawa, Kosei and Fan, Youmei and Kashiwa, Yutaro and Wessel, Mairieli},
+  year = 2026,
+  month = aug,
+  eprint = {2608.29204},
+  primaryclass = {cs.SE},
+  doi = {10.48550/arXiv.2608.29204},
+  archiveprefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.29204}
+}
+```
+
 ## License
 
 This repository contains both **code** and **data**, under different licenses:
@@ -126,13 +147,9 @@ This repository contains both **code** and **data**, under different licenses:
 - **Code** (packages, scripts, notebooks): [MIT](LICENSE)
 - **Dataset** (sample under `data/dataset-sample/` and the Hugging Face release): [CC BY 4.0](DATA_LICENSE)
 
-The dataset incorporates repository sampling from [GitHub Search (GHS)](https://seart-ghs.si.usi.ch/), which is MIT-licensed. The full GHS MIT text is included in [`DATA_LICENSE`](DATA_LICENSE). Redistributors of the dataset should ship that notice alongside the data.
-
-## Acknowledgements
-
 Repository sampling for AgentLogs uses [GitHub Search](https://seart-ghs.si.usi.ch/)
 ([GitHub](https://github.com/seart-group/ghs), [Zenodo](https://doi.org/10.5281/zenodo.4588464))
 &copy; SEART Research Group and Contributors, used under the
 [MIT License](https://github.com/seart-group/ghs/blob/master/LICENSE).
 
-The GitHub Search seed CSV is downloaded at collection time and is not distributed with this repository. The sample under `data/dataset-sample/` and the full Hugging Face release include repository records collected using that seed.
+The GitHub Search seed CSV is downloaded at collection time and is not distributed with this repository. The `repositories` table is built from that CSV.
