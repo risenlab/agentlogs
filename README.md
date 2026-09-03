@@ -2,7 +2,7 @@
 
 <a href="https://github.com/risenlab/agentlogs/tree/main" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Version-v0.2-blue?logo=github&amp;logoColor=whitesmoke" alt="Version"></a>
 <a href="https://pypi.org/project/risenlab-agentlogs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/v/risenlab-agentlogs?label=Package&amp;logo=pypi&amp;logoColor=whitesmoke" alt="Package"></a>
-<a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Database-v0.2-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Database"></a>
+<a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-v0.2-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Dataset"></a>
 <a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Preprint-2608.29204-b31b1b.svg?logo=arxiv&amp;logoColor=whitesmoke" alt="Preprint"></a>
 
 AgentLogs is a dataset of activity related to the [GitHub agents functionality](https://github.com/features/copilot/agents): repository metadata, agent tasks, sessions, session logs (messages, tool calls, usage details, etc.), and user records. This repository contains schema definitions, example analysis notebooks, and a sample of the dataset.
