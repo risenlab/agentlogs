@@ -1,38 +1,47 @@
 # AgentLogs
 
-<a href="https://github.com/risenlab/agentlogs/tree/main" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Version-v0.2-blue?logo=github&amp;logoColor=whitesmoke" alt="Version"></a>
-<a href="https://pypi.org/project/risenlab-agentlogs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/pypi/v/risenlab-agentlogs?label=Package&amp;logo=pypi&amp;logoColor=whitesmoke" alt="Package"></a>
-<a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Dataset-v0.2-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Dataset"></a>
-<a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Preprint-2608.29204-b31b1b.svg?logo=arxiv&amp;logoColor=whitesmoke" alt="Preprint"></a>
+<a href="https://pypi.org/project/risenlab-agentlogs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/PyPI-risenlab--agentlogs-blue?logo=pypi&amp;logoColor=whitesmoke" alt="PyPI risenlab-agentlogs"></a>
+<a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Hugging%20Face-risenlab%2Fagentlogs-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Hugging Face risenlab/agentlogs"></a>
+<a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/arXiv-2608.29204-b31b1b?logo=arxiv&amp;logoColor=whitesmoke" alt="arXiv 2608.29204"></a>
+
+> [!NOTE]
+> The latest dataset release is `1.0-20261008`. Schema documentation and example notebooks follow schema `v1.0`
+>
+> [Dataset releases](#releases) | [Changelog](CHANGELOG.md)
 
 AgentLogs is a dataset of activity related to the [GitHub agents functionality](https://github.com/features/copilot/agents): repository metadata, agent tasks, sessions, session logs (messages, tool calls, usage details, etc.), and user records. This repository contains schema definitions, example analysis notebooks, and a sample of the dataset.
 
 This dataset is described in:
 
-> Jonan Richards, Kosei Horikawa, Youmei Fan, Yutaro Kashiwa, and Mairieli Wessel (2026), *AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent*. arXiv: [2608.29204](https://arxiv.org/abs/2608.29204) (preprint).
+> 📄 Jonan Richards, Kosei Horikawa, Youmei Fan, Yutaro Kashiwa, and Mairieli Wessel (2026), *AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent*. arXiv: [2608.29204](https://arxiv.org/abs/2608.29204) (preprint).
 
 ## Dataset
 
-The AgentLogs dataset contains the following tables:
-
 | | # Records | Size | Table | Content |
 | --- | ---: | ---: | --- | --- |
-| **Repositories**<br><small>−&nbsp;1.98% with agent tasks</small> | 1,812,362<br><small>-&nbsp;35,810</small> | 395.6&nbsp;MB | [`repositories`](docs/schema/repository.md) | Public GitHub repositories with over 10 stars (metadata including name, license, language, stars, forks, timestamps, labels, topics). |
-| **Agent tasks**<br><small>−&nbsp;99.90% found</small><br><small>−&nbsp;97.00% with sessions</small> | 307,416<br><small>-&nbsp;307,108</small><br><small>-&nbsp;298,188</small> | 77.1&nbsp;MB | [`agent_tasks`](docs/schema/agent_task.md) | Agent assignment on a repository (metadata including name, request, state, creator, timestamps, branch/PR identifiers). |
-| **Agent sessions** | 549,239 | 225.1&nbsp;MB | [`agent_sessions`](docs/schema/agent_session.md) | Agent runs within a task (metadata including model, prompt, outcome, usage, and branch/PR identifier for that session). |
-| **Log entries**<br><small>−&nbsp;>99.99% parsed</small> | 64,255,174<br><small>-&nbsp;64,254,936</small> | 56.0&nbsp;GB | [`agent_session_logs`](docs/schema/agent_session_log_entry.md) | Session log events (including messages, usage details, tool calls for file edits, git, and GitHub issues, PRs, comments, CI). |
-| **Users**<br><small>−&nbsp;99.96% found</small> | 33,573<br><small>-&nbsp;33,561</small> | 39.7&nbsp;MB | [`users`](docs/schema/user.md) | Users related to the agent tasks and sessions (only GitHub id and username). |
-| **Total** | **66,957,764** | **56.7&nbsp;GB** | | |
+| **Repositories**<br><small>−&nbsp;2.18% with agent tasks</small> | 1,861,300<br><small>-&nbsp;40,565</small> | 462.7&nbsp;MB | [`repositories`](docs/schema/repository.md) | Public GitHub repositories with over 10 stars (metadata including name, license, language, stars, forks, timestamps, labels, topics). |
+| **Agent tasks**<br><small>−&nbsp;97.20% with sessions</small> | 363,624<br><small>-&nbsp;353,432</small> | 83.7&nbsp;MB | [`agent_tasks`](docs/schema/agent_task.md) | Agent assignment on a repository (metadata including name, request, state, creator, timestamps, branch/PR identifiers). |
+| **Agent sessions**<br><small>−&nbsp;98.24% with session logs</small> | 635,886<br><small>-&nbsp;624,668</small> | 243.1&nbsp;MB | [`agent_sessions`](docs/schema/agent_session.md) | Agent runs within a task (metadata including model, prompt, outcome, usage, and branch/PR identifier for that session). |
+| **Log entries**<br><small>−&nbsp;>99.99% parsed</small> | 75,631,136<br><small>-&nbsp;75,630,896</small> | 63.0&nbsp;GB | [`agent_session_logs`](docs/schema/agent_session_log_entry.md) | Session log events (including messages, usage details, tool calls for file edits, git, and GitHub issues, PRs, comments, CI). |
+| **Users**<br><small>−&nbsp;4.40% with tasks or sessions</small> | 857,428<br><small>-&nbsp;37,714</small> | 211.5&nbsp;MB | [`users`](docs/schema/user.md) | Users, organizations, and bots related to the other tables (GitHub id, login slug, and creation date). |
+| **Pull requests**<br><small>−&nbsp;99.82% with timeline events</small> | 317,878<br><small>-&nbsp;317,297</small> | 483.9&nbsp;MB | [`pull_requests`](docs/schema/pull_request.md) | Pull requests created by agent tasks and sessions (GitHub id, number, state, and branches). |
+| **Pull request timeline events** | 9,070,939 | 327.4&nbsp;MB | [`pull_request_timelines`](docs/schema/pull_request_timeline_event.md) | Timeline events for collected pull requests (actor, label, commit, and message). |
+| **Workflow runs** | 554,496 | 83.3&nbsp;MB | [`workflow_runs`](docs/schema/workflow_run.md) | GitHub Actions runs that executed agent sessions (status, head commit, and triggering user/bot). |
+| **Total** | **89,292,687** | **64.9&nbsp;GB** | | |
 
 See the [schema reference](docs/schema/README.md) for field-level documentation of each table.
 
-<p align="center">
-  <img src="docs/figures/relationships.png" alt="Entity relationship diagram" width="300">
-  <br>
-  <em>Entity relationship diagram for the AgentLogs dataset. Non-foreign key fields are omitted.</em>
-</p>
+### Releases
 
-The full dataset is published on [Hugging Face](https://huggingface.co/datasets/risenlab/agentlogs). This repository includes a **sample** of this data under `data/dataset-sample/` (see [`DATA_LICENSE`](DATA_LICENSE)). Repository records in the sample (and in the full dataset) contain data from the [GitHub Search](https://seart-ghs.si.usi.ch/) list (see [License](#license)).
+The full dataset is published on [Hugging Face](https://huggingface.co/datasets/risenlab/agentlogs). This repository includes a sample of the `1.0-20261008` release under `data/dataset-sample/`.
+
+<table>
+<thead><tr><th>Schema version</th><th>Dataset release</th><th>Release date</th><th>Cutoff date</th></tr></thead>
+<tbody>
+<tr><td rowspan="1"><a href="https://pypi.org/project/risenlab-agentlogs/1.0.0/">v1.0</a></td><td><a href="https://huggingface.co/datasets/risenlab/agentlogs/tree/1.0-20261008">1.0-20261008</a></td><td>8 October, 2026</td><td>30 August, 2026</td></tr>
+<tr><td rowspan="1"><a href="https://pypi.org/project/risenlab-agentlogs/0.2.0/">v0.2</a></td><td><a href="https://huggingface.co/datasets/risenlab/agentlogs/tree/v0.2">0.2</a></td><td>29 August, 2026</td><td>17 July, 2026</td></tr>
+</tbody>
+</table>
 
 ## This repository
 
@@ -41,7 +50,8 @@ The full dataset is published on [Hugging Face](https://huggingface.co/datasets/
 | [`packages/risenlab-agentlogs/`](packages/risenlab-agentlogs/) | TypedDict schema definitions |
 | [`scripts/analysis/`](scripts/analysis/) | Example notebooks for analyzing the dataset |
 | [`data/dataset-sample/`](data/dataset-sample/) | Sample of the dataset for demonstration purposes |
-| [`docs/figures/`](docs/figures/) | Entity relationship diagram |
+| [`docs/schema/`](docs/schema/) | Field-level schema documentation |
+| [`CHANGELOG.md`](CHANGELOG.md) | Schema and repository changelog |
 | [`LICENSE`](LICENSE) | MIT license for code in this repository |
 | [`DATA_LICENSE`](DATA_LICENSE) | CC BY 4.0 license for the AgentLogs dataset (includes GHS MIT notice) |
 
@@ -62,7 +72,7 @@ from agentlogs.schema import AgentSessionLogEntry, Repository, AgentTask, ...
 
 ## Analysis examples
 
-The notebooks in [`scripts/analysis/`](scripts/analysis/) show different ways to work with the dataset. DuckDB, Polars, and local streaming read parquet from disk: use the bundled sample under `data/dataset-sample/`, or download a Hub snapshot into `data/dataset/`. The Hugging Face streaming notebook reads from the Hub without a local copy and is not meant for the sample. Which approach to take depends on the kind of analysis you are doing and what tools you are familiar with.
+The notebooks in [`scripts/analysis/`](scripts/analysis/) show different ways to work with the dataset. DuckDB, Polars, and streaming read parquet from disk: use the bundled sample under `data/dataset-sample/`, or download a Hub snapshot into `data/dataset/`. Which approach to take depends on the kind of analysis you are doing and what tools you are familiar with.
 
 ### [`examples_duckdb.ipynb`](scripts/analysis/examples_duckdb.ipynb): DuckDB, SQL querying over Parquet
 
@@ -107,20 +117,6 @@ Read local Parquet tables in small batches and iterate over individual records. 
 **Not ideal for:**
 
 - Computing counts or distributions over the full dataset and/or for single columns (see DuckDB and Polars).
-
-### [`examples_streaming_huggingface.ipynb`](scripts/analysis/examples_streaming_huggingface.ipynb): Hugging Face `load_dataset`, streaming from the Hub
-
-Same row-by-row pattern as the local streaming notebook for the smaller tables, but `load_dataset(..., streaming=True)` reads parquet from Hugging Face without filling `data/dataset/`. Do not stream `agent_session_logs` from the Hub (full rows, including payloads, are downloaded to your machine). Use [`examples_streaming.ipynb`](scripts/analysis/examples_streaming.ipynb) with the sample or a snapshot.
-
-**Good for:**
-
-- Trying the published dataset without a local copy.
-- The same per-row typed inspection as streaming.
-
-**Not ideal for:**
-
-- Repeated scans (bytes are fetched again each run; download parquet and use DuckDB, Polars, or local streaming).
-- Aggregates over a full table (see DuckDB and Polars).
 
 ## Citation
 

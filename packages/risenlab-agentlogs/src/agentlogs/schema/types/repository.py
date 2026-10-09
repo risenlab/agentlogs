@@ -1,8 +1,8 @@
 import datetime as dt
 from typing import Annotated, TypedDict
 
-from .annotation import GitHubField, Relation
-from .references import AgentTaskReference
+from .annotation import Description, GitHubField, Relation, Source, Table
+from .references import AgentTaskReference, RepositoryReference, UserReference
 
 class RepositoryMetric(TypedDict):
     language: str
@@ -10,10 +10,31 @@ class RepositoryMetric(TypedDict):
     code_lines: int
     comment_lines: int
 
+class RepositoryLanguage(TypedDict):
+    language: str
+    bytes: int
+
+@Table(
+    name="repositories",
+    sources=[
+        Source(
+            name="Repository",
+            text="SEART GHS CSV export ([seart-ghs.si.usi.ch](https://seart-ghs.si.usi.ch), [seart-group/ghs](https://github.com/seart-group/ghs))",
+        ),
+    ],
+    reference=RepositoryReference,
+)
 class Repository(TypedDict):
+    """GitHub repository."""
+
     full_name: str
 
-    agent_tasks: Annotated[list[AgentTaskReference], GitHubField("tasks[]")]
+    agent_tasks: Annotated[list[AgentTaskReference], Relation("repository"), GitHubField("tasks[]")]
+    owner: Annotated[
+        UserReference,
+        Relation("repositories"),
+        Description("Login is the first segment of `full_name`."),
+    ]
 
     archived: Annotated[bool, GitHubField("isArchived")]
     disabled: Annotated[bool, GitHubField("isDisabled")]
@@ -47,9 +68,29 @@ class Repository(TypedDict):
 
     labels: Annotated[list[str], GitHubField("labels.nodes[].name")]
     topics: Annotated[list[str], GitHubField("repositoryTopics.nodes[].topic.name")]
-    languages: Annotated[dict[str, int], GitHubField("languages")]
+    languages: Annotated[
+        list[RepositoryLanguage],
+        Description(
+            "Number of bytes of code in each language ([GitHub REST API documentation](https://docs.github.com/en/rest/repos/repos#list-repository-languages))."
+        ),
+    ]
 
-    blank_lines: int | None
-    code_lines: int | None
-    comment_lines: int | None
-    metrics: list[RepositoryMetric]
+    blank_lines: Annotated[
+        int | None,
+        Description("Total blank lines ([cloc](https://github.com/AlDanial/cloc))."),
+    ]
+    code_lines: Annotated[
+        int | None,
+        Description("Total code lines ([cloc](https://github.com/AlDanial/cloc))."),
+    ]
+    comment_lines: Annotated[
+        int | None,
+        Description("Total comment lines ([cloc](https://github.com/AlDanial/cloc))."),
+    ]
+    metrics: Annotated[
+        list[RepositoryMetric],
+        Description(
+            "Line counts in each language ([cloc](https://github.com/AlDanial/cloc)). "
+            "Language names do not match the `languages` field."
+        ),
+    ]

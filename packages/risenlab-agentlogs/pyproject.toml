@@ -1,6 +1,6 @@
 [project]
 name = "risenlab-agentlogs"
-dynamic = ["version"]
+version = "1.0.0"
 description = "Schema definitions and utilities for the AgentLogs dataset"
 readme = "README.md"
 license = "MIT"
@@ -23,9 +23,6 @@ Dataset = "https://huggingface.co/datasets/risenlab/agentlogs"
 [build-system]
 requires = ["hatchling>=1.27"]
 build-backend = "hatchling.build"
-
-[tool.hatch.version]
-path = "src/agentlogs/schema/__init__.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/agentlogs"]

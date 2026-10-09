@@ -1,4 +1,4 @@
-__version__ = "0.2"
+__version__ = "1.0"
 
 from pathlib import Path
 
@@ -8,17 +8,25 @@ from .types.agent_session import (
     AgentSessionEvent,
 )
 from .types.agent_task import (
-    AgentArtifactReference,
     AgentTask,
-    AgentTaskData,
+    AgentTaskSessionReference,
+    BranchArtifactData,
     CustomAgentReference,
 )
 from .types.repository import (
     Repository,
+    RepositoryLanguage,
     RepositoryMetric,
 )
 from .types.user import (
     User,
+)
+from .types.workflow_run import (
+    WorkflowRun,
+)
+from .types.pull_request import (
+    PullRequest,
+    PullRequestTimelineEvent,
 )
 from .types.references import (
     AgentSessionReference,
@@ -26,15 +34,31 @@ from .types.references import (
     RepositoryReference,
     UserReference,
     AgentReference,
-    PullRequestIDReference,
     PullRequestReference,
+    WorkflowRunReference,
     BranchReference,
+    BranchCommitReference,
+    CommitReference,
 )
 from .types.agent_session_log import (
     AgentSessionLogEntry,
     AgentSessionLogEntryData,
 )
-from .cast import cast_record
+from .types.annotation import table_info
+
+TABLES = (
+    Repository,
+    AgentTask,
+    AgentSession,
+    AgentSessionLogEntry,
+    User,
+    PullRequest,
+    PullRequestTimelineEvent,
+    WorkflowRun,
+)
+
+for table in TABLES:
+    table_info(table)
 
 
 class DatasetVersionError(ValueError):
@@ -43,10 +67,10 @@ class DatasetVersionError(ValueError):
 
 def assert_version(version: str) -> None:
     version = version.removeprefix("v")
-    if version != __version__:
+    schema = version.split("-", 1)[0]
+    if schema != __version__:
         raise DatasetVersionError(
-            f"Dataset version {version} does not match schema {__version__}. "
-            f"Install risenlab-agentlogs {version} or snapshot revision v{__version__}."
+            f"Dataset schema {schema} does not match installed schema {__version__}."
         )
 
 
@@ -62,20 +86,25 @@ __all__ = [
     "AgentSessionLogEntry",
     "AgentSessionLogEntryData",
 
-    "AgentArtifactReference",
-    "PullRequestReference",
-    "BranchReference",
+    "BranchArtifactData",
     "AgentTask",
-    "AgentTaskData",
+    "AgentTaskSessionReference",
     "CustomAgentReference",
-    "PullRequestIDReference",
     "PullRequestReference",
+    "WorkflowRunReference",
     "BranchReference",
+    "BranchCommitReference",
+    "CommitReference",
     
     "Repository",
+    "RepositoryLanguage",
     "RepositoryMetric",
 
     "User",
+
+    "WorkflowRun",
+    "PullRequest",
+    "PullRequestTimelineEvent",
 
     "AgentSessionReference",
     "AgentTaskReference",
@@ -83,7 +112,7 @@ __all__ = [
     "UserReference",
     "AgentReference",
 
-    "cast_record",
+    "TABLES",
     "DatasetVersionError",
     "assert_dataset_version",
     "assert_version",
