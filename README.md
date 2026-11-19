@@ -38,7 +38,7 @@ The full dataset is published on [Hugging Face](https://huggingface.co/datasets/
 <table>
 <thead><tr><th>Schema version</th><th>Dataset release</th><th>Release date</th><th>Cutoff date</th></tr></thead>
 <tbody>
-<tr><td rowspan="1"><a href="https://pypi.org/project/risenlab-agentlogs/1.0.0/">v1.0</a></td><td><a href="https://huggingface.co/datasets/risenlab/agentlogs/tree/1.0-20261008">1.0-20261008</a></td><td>8 October, 2026</td><td>30 September, 2026</td></tr>
+<tr><td rowspan="1"><a href="https://pypi.org/project/risenlab-agentlogs/1.0.0/">v1.0</a></td><td><a href="https://huggingface.co/datasets/risenlab/agentlogs/tree/1.0-20261008">1.0-20261008</a></td><td>8 October, 2026</td><td>29 September, 2026</td></tr>
 <tr><td rowspan="1"><a href="https://pypi.org/project/risenlab-agentlogs/0.2.0/">v0.2</a></td><td><a href="https://huggingface.co/datasets/risenlab/agentlogs/tree/v0.2">0.2</a></td><td>29 August, 2026</td><td>17 July, 2026</td></tr>
 </tbody>
 </table>
