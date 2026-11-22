@@ -7,10 +7,30 @@ license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.12"
 authors = [{ name = "RISEN Lab" }]
-keywords = ["agentlogs", "github", "copilot", "dataset", "schema"]
+keywords = [
+    "agentlogs",
+    "schema",
+    "dataset",
+    "agents",
+    "agent-logs",
+    "agent-trajectories",
+    "coding-agents",
+    "ai-agents",
+    "llm-agents",
+    "tool-use",
+    "github-copilot",
+    "copilot-coding-agent",
+    "mining-software-repositories",
+    "software-engineering",
+]
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development",
     "Typing :: Typed",
 ]
 dependencies = []
@@ -19,6 +39,7 @@ dependencies = []
 Homepage = "https://github.com/risenlab/agentlogs"
 Documentation = "https://github.com/risenlab/agentlogs/tree/main/docs/schema"
 Dataset = "https://huggingface.co/datasets/risenlab/agentlogs"
+Paper = "https://arxiv.org/abs/2608.29204"
 
 [build-system]
 requires = ["hatchling>=1.27"]

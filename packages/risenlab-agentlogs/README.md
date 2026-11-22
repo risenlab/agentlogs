@@ -1,5 +1,6 @@
 # AgentLogs
 
+<a href="https://risenlab.com/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Website-risenlab.com%2Fagentlogs-2b224d" alt="Website https://risenlab.com/agentlogs"></a>
 <a href="https://github.com/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-risenlab%2Fagentlogs-181717?logo=github&amp;logoColor=whitesmoke" alt="GitHub risenlab/agentlogs"></a>
 <a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Hugging%20Face-risenlab%2Fagentlogs-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Hugging Face risenlab/agentlogs"></a>
 <a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/arXiv-2608.29204-b31b1b?logo=arxiv&amp;logoColor=whitesmoke" alt="arXiv 2608.29204"></a>
@@ -8,7 +9,7 @@
 >
 > [Dataset releases](https://huggingface.co/datasets/risenlab/agentlogs#releases) | [Changelog](https://github.com/risenlab/agentlogs/blob/main/CHANGELOG.md)
 
-TypedDict schema and helpers for the [AgentLogs](https://huggingface.co/datasets/risenlab/agentlogs) dataset. Field-level documentation: [schema reference](https://github.com/risenlab/agentlogs/tree/main/docs/schema).
+TypedDict schema and helpers for the [AgentLogs](https://huggingface.co/datasets/risenlab/agentlogs) dataset of coding agent activity on GitHub. Documentation for every table and field: [schema reference](https://github.com/risenlab/agentlogs/tree/main/docs/schema).
 
 ## Installation
 

@@ -16,7 +16,7 @@
     - `api_tokens_example.toml` as a template for the GitHub and Copilot tokens.
     - A README section on setting up and running collection, and on how the pipeline works.
 - Updated the paper title in the citation.
-- Fixed the cutoff date of dataset release `1.0-20261008` in the release table (30 September, 2026).
+- Fixed the cutoff date of dataset release `1.0-20261008` in the release table (September 29, 2026).
 
 <a id="v1_0_0"></a>
 
