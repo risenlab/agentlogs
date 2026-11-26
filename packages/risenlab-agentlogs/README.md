@@ -1,6 +1,6 @@
 # AgentLogs
 
-<a href="https://risenlab.com/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Website-risenlab.com%2Fagentlogs-2b224d" alt="Website https://risenlab.com/agentlogs"></a>
+<a href="https://risenlab.com/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Website-risenlab.com%2Fagentlogs-7a61dd" alt="Website https://risenlab.com/agentlogs"></a>
 <a href="https://github.com/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/GitHub-risenlab%2Fagentlogs-181717?logo=github&amp;logoColor=whitesmoke" alt="GitHub risenlab/agentlogs"></a>
 <a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Hugging%20Face-risenlab%2Fagentlogs-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Hugging Face risenlab/agentlogs"></a>
 <a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/arXiv-2608.29204-b31b1b?logo=arxiv&amp;logoColor=whitesmoke" alt="arXiv 2608.29204"></a>

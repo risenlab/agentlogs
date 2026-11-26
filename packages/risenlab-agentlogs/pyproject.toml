@@ -36,7 +36,8 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/risenlab/agentlogs"
+Homepage = "https://risenlab.com/agentlogs"
+Repository = "https://github.com/risenlab/agentlogs"
 Documentation = "https://github.com/risenlab/agentlogs/tree/main/docs/schema"
 Dataset = "https://huggingface.co/datasets/risenlab/agentlogs"
 Paper = "https://arxiv.org/abs/2608.29204"

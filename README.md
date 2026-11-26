@@ -1,20 +1,21 @@
 # AgentLogs
 
-<a href="https://risenlab.com/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Website-risenlab.com%2Fagentlogs-2b224d" alt="Website https://risenlab.com/agentlogs"></a>
+<a href="https://risenlab.com/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Website-risenlab.com%2Fagentlogs-7a61dd" alt="Website https://risenlab.com/agentlogs"></a>
 <a href="https://pypi.org/project/risenlab-agentlogs/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/PyPI-risenlab--agentlogs-blue?logo=pypi&amp;logoColor=whitesmoke" alt="PyPI risenlab-agentlogs"></a>
 <a href="https://huggingface.co/datasets/risenlab/agentlogs" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/Hugging%20Face-risenlab%2Fagentlogs-ffd21e?logo=huggingface&amp;logoColor=whitesmoke" alt="Hugging Face risenlab/agentlogs"></a>
 <a href="https://arxiv.org/abs/2608.29204" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/arXiv-2608.29204-b31b1b?logo=arxiv&amp;logoColor=whitesmoke" alt="arXiv 2608.29204"></a>
 
-AgentLogs is a large-scale dataset of real-world AI coding agent activity on GitHub. It shows how agents work, not just the pull requests they produce.
+AgentLogs is a large-scale dataset of real-world AI coding agent activity on GitHub. It shows how agents work and how developers steer them, not just the pull requests they produce.
 
 **Highlights**
 
 - **Scale**: 636K agent sessions in 364K tasks across 40.6K public repositories, with 75.6M log entries and 28.5M tool calls, in the latest release (`1.0-20261008`)
+- **Multi-turn tasks**: tasks are conversations with one session per developer request, including follow-ups given in pull request comments and reviews
 - **Execution traces**: every step of a session, with prompts, reasoning, tool calls and their results, and token usage
 - **Complete code changes**: every tool call keeps its full arguments, so each file edit records the exact text replaced and inserted, and each new file its full content
 - **Outcomes**: the linked pull requests, their timelines, and the workflow runs that executed each session
 - **Unfiltered**: sessions with any outcome, including errors and pull requests that were never merged
-- **Research uses**: agent behavior and failure modes, tool use, efficiency and cost, task formulation, collaboration between developers and agents, and agent adoption across repositories
+- **Research uses**: agent behavior and failure modes, multi-turn developer–agent collaboration, tool use, efficiency and cost, and agent adoption across repositories
 - **Open**: the full dataset, under CC BY 4.0
 
 For an example session, first findings, and a five-minute video introduction, visit the [dataset homepage](https://risenlab.com/agentlogs).
@@ -43,7 +44,7 @@ This dataset is described in:
 
 ## Dataset summary
 
-On GitHub, developers hand off coding tasks to a cloud agent by assigning it an issue, mentioning it on a pull request (e.g., `@copilot`), writing a prompt on the repository's Agents tab, or through integrations such as Slack and Jira. The agent works on its own branch and opens a pull request. Developers then steer it with follow-up requests, each of which starts a new session, until the task is done.
+On GitHub, developers start a cloud agent on a coding task by assigning it an issue, mentioning it on a pull request (e.g., `@copilot`), writing a prompt on the repository's Agents tab, or through integrations such as Slack and Jira. The agent works on its own branch and opens a pull request. Developers then review its work and steer it with follow-up requests in comments and reviews, until the task is done. Each follow-up starts a new session in the same task.
 
 > [!TIP]
 > Other datasets call a conversation with an agent a *session*. In AgentLogs, that conversation is a **task**, and each turn or prompt in it is a **session**.
@@ -81,6 +82,7 @@ The `1.0-20261008` release covers sessions from May 11, 2025 to the cutoff on Se
 | Repositories without any tasks | Private repositories |
 | Sessions whose log was not found, without log entries | Repositories deleted, renamed, or made private before collection |
 | Users' login, GitHub ID, and account creation date | Profile fields such as name, email, or bio |
+| Multi-turn conversations: every follow-up request that steered the agent on its pull request | Real-time chat with an agent in an IDE or terminal |
 
 ### Releases
 
